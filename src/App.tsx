@@ -1,16 +1,35 @@
 import React from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import NewNote from './pages/NewNote/NewNote'
 
-function App(): React.ReactNode {
+function App(): React.ReactElement {
 	return (
-		<>
-			<div className="flex justify-center items-center h-screen">
-				<div className="mockup-code">
-					<pre data-prefix="$" className="text-success">
-						<code>There will be awesome notes app soon</code>
-					</pre>
-				</div>
-			</div>
-		</>
+		<div className="m-4">
+			<Routes>
+				<Route
+					path="/"
+					element={<h1>/</h1>}
+				/>
+				<Route
+					path="/new"
+					element={<NewNote />}
+				/>
+				<Route path="/:id">
+					<Route
+						index
+						element={<h1>Show</h1>}
+					/>
+					<Route
+						path="edit"
+						element={<h1>Edit</h1>}
+					/>
+				</Route>
+				<Route
+					path="*"
+					element={<Navigate to="/" />}
+				/>
+			</Routes>
+		</div>
 	)
 }
 
