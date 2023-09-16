@@ -9,7 +9,7 @@ export default {
   },
   plugins: [require('daisyui', '@tailwindcss/forms')],
   daisyui: {
-    themes: ['cupcake']
+    themes: ['lemonade']
   }
 }
 

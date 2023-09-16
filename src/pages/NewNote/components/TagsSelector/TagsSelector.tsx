@@ -13,6 +13,9 @@ console.log(createOption('Two'))
 export default function TagsSelector(): React.ReactElement {
 	return (
 		<CreatableRaectSelect
+			name="tagSelector"
+			id="tagSelector"
+			required
 			isMulti
 			closeMenuOnSelect={false}
 			unstyled
